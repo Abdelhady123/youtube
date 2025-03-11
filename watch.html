@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="er" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  مشاهده يوتيوبي</title>
+  <link rel="stylesheet" href="bootstrap.rtl.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/watch.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <!--fonawsem-->
+</head>
+<body>
+  <div class="layer"></div>
+
+  <div id="top-menu">
+    <div class="container-fluid">
+      <!--
+            navbar(الصنف الرئيسي)
+            navbar-expand-lg( تمدد العناصر على طول القائمه ما دامت الشاشه lg or xlg)
+            navbar-light bg-light(الاصناف المسوله عن لون القائمه)
+            fixed-top(لتثبيت القائمه في اعلى الصفحه) 
+            navbar-brand(يستخدم لكتابة العنوان لل قائمه)  
+            -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-4">
+              <i class="fa-solid fa-bars fa-lg" id="toggler"></i>
+             <b> 
+              <a class="navbar-brand ms-3" href="index.html">يوتيوبي
+              <svg class="icon-video p-1" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </a>
+          </b>
+              <!--الزر المسؤل عن اضهار القائمه في حال كانت الشاشات md s xs-->
+             
+              <!--collapse navbar-collapse(مسؤل عن تنضيم العناصر في القائمه)
+            nav-item active(خاصه بالعناصر داخل القائمه )
+            nav-link(خاصه في الروابط )
+            sr-only(تنسيق المحتوى المخفى المطلوب وجوده من اجل بعض التقنيات مثل قارات الشاشه)
+            -->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-lg-auto">
+                  <li class="nav-item ps-lg-0">
+                    <a class="nav-link" href="index.html" tabindex="1">الفيديوهات المقترحه </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link ms-lg-3" href="#">المرفوعه حديثا</a>
+                  </li>
+                  <!--القائمه المنسدله
+              tabindex="1"(لتحديد عناصر القائمه عن طريق ال tap
+              اذا كانت القيمه سالبه يعني ان هاذا العنصر معطل
+              ويجب اضافت ال aria-disabled="true"
+              )
+              -->
+      
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">  الفيديوهات الرائجه</a>
+                  </li>
+                  </ul>
+      
+      
+                <!--لاننا نستخدم ملف  css right to lft
+                فعندما نريد ان نضيف مسافه على اليمين نضيفها على اليسار والعكس صحيح
+      
+                btn-danger(اعطاء لون )
+                btn-outline-danger(لون عند التمرير)
+                btn-sm(زر صغير)
+                btn-block(لمتداد الزر على طول الحاويه)
+                  -->
+                <div class="d-flex my-2 my-lg-0">
+                  <input class="form-control me-sm-2 form-hide" type="search" placeholder="Search" aria-label="Search">
+                  <button  onclick="location.href='search.html';" class="btn btn-sm my-2 my-sm-0 form-hide" type="submit">ابحث</button>
+                              
+                </div>
+                    
+              </div>
+              <i class="fas fa-search me-4 search-icon"></i>
+              <a class="nav-link login" href="#" data-bs-toggle="modal" data-bs-target="#loginModel"
+              tabindex="-1"> تسجيل الدخول</a>
+            </nav>
+            <input type="search" class="form-control search-input" placeholder="ابحث هنا">
+      
+          <!-- Modal 
+       -->
+          <div class="modal fade" id="loginModel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">تسجيل الدخول</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="email" class="col-form-label">البريد الكتروني</label>
+                      <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="password" class="col-form-label">كلمة المرور</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <a href="">نسيت كلمة المرور</a>
+                  <a href="" class="mx-auto">انشاء حساب</a>
+                  <button type="button" class="btn btn-outline-primary">دخول</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--side navbar-->
+          <div class="row pt-4">
+            <div class="wrap pt-4">
+              <div class="sidepar">
+                <ul class="list-group list-group-flush ps-0">
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-home me-2 purple"></i>الصفحه الرئيسيه 
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-video me-2 purple"></i> الفيديوهات المقترحه
+                    </a>
+                    
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-plus me-2 purple"></i> المرفوعه حديثا
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-fire me-2 purple"></i>  الفيديوهات الرائجه
+      
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-circle-play me-2 purple"></i>    فيديوهاتي
+                    </a>
+      
+                    <a href="log.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-hourglass me-2 purple"></i>    سجل المشاهده  
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="far fa-share-square me-2 purple"></i> الاشتراكات 
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-film me-2 purple"></i>الافلام والعروض
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-gamepad me-2 purple"></i>العاب الفيديو
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-tshirt me-2 purple"></i>الموضه والجمال 
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-book me-2 purple"></i> محتوى تعليمي
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-cog me-2 purple"></i> الاعدادات
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-question me-2 purple"></i> مساعده
+                    </a>
+      
+                    <a href="https://academy.hsoub.com/">
+                  دورة تطوير واجهات المستخدم<br>
+                  اكادمية حسوب 2024 &copy;
+                    </a>
+                   </ul>
+              </div>
+            </div>
+          </div>
+  </div>
+<!--watch page-->
+
+<div class="watchpage pt-5">
+  <div class="container-fluid mt-3">
+<div class="card border-0 ">
+  <div class="row mx-2">
+    <div class="col-lg-7 ">
+      <!--controls: اضهار ادوات التحكم
+      poster:اضهار صوره ك غلاف للفيديو
+      autoplay:خاصية التشغيل التلقائي لا تعمل الا مع muted
+      loop: اعادة تشغيل الفيديو عند الانتهاء بشكل تلقائي
+      -->
+<video class="w-100" controls loop poster="image/hsoub-academy.jpg.d82ae025ae63ea1973c5f3260ee2de66.jpg">
+<!-- وضع اكثر من صيغه للفيديو حتى لو كان احد المتصفحات لا يدعم صيغه معينه-->
+<source src="video/hsoub.webm" type="video/webm">
+<source src="video/hsoub.mp4" type="video/mp4">
+<!--track تعمل عند رفع المشروع على سيرفر
+captions:تفريغ محتوى الملف في الفيديو 
+-->
+<track kind="captions" src="video/caption.vtt" srclang="ar" label="عربي" default>
+<!--المتصفح لا يدعم العنصر فيديو تضهر في حال كان المتصفح لا يدعم الفيديو-->
+متصفحك لا يدعم العنصر <code>video</code>
+</video>     
+</div>
+
+    <div class="col-lg-5">
+      <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+        1 مليون مشاهده 
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+        قبل 9 اشهر
+        <a href="chanel.html" class="text-decoration-none" id="block-img-name">
+          <img src="image/HsoubAcademyLogo.png" alt="alternetText" class="rounded-circle my-2 ms-2" width="70px">
+          <span class="card-text">اكادمية حسوب</span>
+          </a>
+      </small>    
+      <div class="card-block">
+        <a href="watch.html" class="text-decoration-none"> <h4 class="card-title">اكادمية حاسوب</h4></a>
+      <p class="card-text"> فيديو تعريفي عن اكادمية حاسوب ومميزاتها والكثير من الدورات الرائعه 
+        <span id="dots">...</span>
+       <span id="more">التي تقودك للاحتراف في عالم البرمجه فيديو تعريفي عن اكادمية حاسوب ومميزاتها والكثير من الدورات الرائعه التي تقودك للاحتراف في عالم البرمج</span> </p>
+      </div>
+    <button class="btn mb-4 mt-2" id="myBtn">عرض المزيد</button>
+    <!--icons-->
+    <div class="icons">
+     <a href="" title="احببته"> <svg class="bg-secondary rounded-circle p-1 text-white me-1" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffffff"><path d="m480-144-50-45q-100-89-165-152.5t-102.5-113Q125-504 110.5-545T96-629q0-89 61-150t150-61q49 0 95 21t78 59q32-38 78-59t95-21q89 0 150 61t61 150q0 43-14 83t-51.5 89q-37.5 49-103 113.5T528-187l-48 43Zm0-97q93-83 153-141.5t95.5-102Q764-528 778-562t14-67q0-59-40-99t-99-40q-35 0-65.5 14.5T535-713l-35 41h-40l-35-41q-22-26-53.5-40.5T307-768q-59 0-99 40t-40 99q0 33 13 65.5t47.5 75.5q34.5 43 95 102T480-241Zm0-264Z"/></svg></a>
+     <a href="" title="مشاهده لاحقا"><svg class="bg-secondary rounded-circle p-1 text-white me-1"xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffffff"><path d="m614-310 51-51-149-149v-210h-72v240l170 170ZM480-96q-79.38 0-149.19-30T208.5-208.5Q156-261 126-330.96t-30-149.5Q96-560 126-630q30-70 82.5-122t122.46-82q69.96-30 149.5-30t149.55 30.24q70 30.24 121.79 82.08 51.78 51.84 81.99 121.92Q864-559.68 864-480q0 79.38-30 149.19T752-208.5Q700-156 629.87-126T480-96Zm0-384Zm.48 312q129.47 0 220.5-91.5Q792-351 792-480.48q0-129.47-91.02-220.5Q609.95-792 480.48-792 351-792 259.5-700.98 168-609.95 168-480.48 168-351 259.5-259.5T480.48-168Z"/></svg></a>
+     <a href="" title="مشاركه"> <svg class="bg-secondary rounded-circle p-1 text-white me-1"xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffffff"><path d="M648-96q-50 0-85-35t-35-85q0-9 4-29L295-390q-16 14-36.05 22-20.04 8-42.95 8-50 0-85-35t-35-85q0-50 35-85t85-35q23 0 43 8t36 22l237-145q-2-7-3-13.81-1-6.81-1-15.19 0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35q-23 0-43-8t-36-22L332-509q2 7 3 13.81 1 6.81 1 15.19 0 8.38-1 15.19-1 6.81-3 13.81l237 145q16-14 36.05-22 20.04-8 42.95-8 50 0 85 35t35 85q0 50-35 85t-85 35Zm0-72q20.4 0 34.2-13.8Q696-195.6 696-216q0-20.4-13.8-34.2Q668.4-264 648-264q-20.4 0-34.2 13.8Q600-236.4 600-216q0 20.4 13.8 34.2Q627.6-168 648-168ZM216-432q20.4 0 34.2-13.8Q264-459.6 264-480q0-20.4-13.8-34.2Q236.4-528 216-528q-20.4 0-34.2 13.8Q168-500.4 168-480q0 20.4 13.8 34.2Q195.6-432 216-432Zm432-264q20.4 0 34.2-13.8Q696-723.6 696-744q0-20.4-13.8-34.2Q668.4-792 648-792q-20.4 0-34.2 13.8Q600-764.4 600-744q0 20.4 13.8 34.2Q627.6-696 648-696Zm0 480ZM216-480Zm432-264Z"/></svg></a>
+     <a href="" title="سجل مشاهده"><svg class="bg-secondary rounded-circle p-1 text-white me-1"xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffffff"><path d="m384-312 264-168-264-168v336Zm96.28 216Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Zm-.28-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312Z"/></svg></a>
+      <span class="ms-2">ابلاغ</span>
+    </div>
+    </div>
+
+  </div>
+</div>
+<!-- القائمه المنسدله-->
+<div class="row mt-4 mx-2">
+  <div class="col-lg-7 order-2 order-lg-1">
+<div class="commuents">
+  <div class="coments-details mb-3">
+
+    <span class="dropdown">
+      <span class="me-2">التعليقات 4</span>
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+التعليقات بحسب
+      </button>
+      <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">التاريخ</a>
+        <a class="dropdown-item" href="#">التعليقات الاحدث</a>
+      </div>
+    </span>
+  </div>
+<!--الزر والتعليق-->
+<div class="bublic-coment">
+  <div class="form-group">
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="اضافة تعليق عام"></textarea>
+  <button class="btn btn-md btn-outline-info mt-3 mb-2">تعليق</button>
+<!--التعليقات-->
+<div class="card mt-5 mb-3">
+  <div class="card-body">
+    <!--التعليق العام-->
+      <div class="row">
+          <div class="col-2">
+              <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+              <p class="text-secondary text-center">منذ 40 دقيقه</p>
+          </div>
+          <div class="col-10">
+              <p>
+                  <a class="float-start mt-4 mt-md-4" href=""><strong>عبدالهادي المجالي</strong></a>
+                  <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+                    <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+                  <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+                  <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+                  <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+
+             </p>
+             <div class="clearfix"></div>
+              <p>مرحبا شكرا لكم على هذه الدوره</p>
+              <p>
+                  <a class="float-start btn me-2 mt-4 replay"> <i class="fa-solid fa-reply"></i> الردود</a>
+                  <a class="float-start btn mt-4"> <i class="fa-regular fa-heart"></i> اعجبني</a>
+             </p>
+          </div>
+      </div>
+<!--الردود-->
+        <div class="card card-inner ms-4 mt-2">
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-2">
+                          <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                          <p class="text-secondary text-center">منذ 20 دقيقه</p>
+                      </div>
+                      <div class="col-10">
+                          <p><a href=""><strong>اكادمية حاسوب</strong></a></p>
+                          <p>اهلا عبدالهادي شكرا لك</p>
+                          <p>
+                              <a class="float-start btn text-white btn-danger"> <i class="fa-regular fa-heart"></i> اعجبني</a>
+                         </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </div>
+</div>
+<div class="card mt-5 mb-3">
+  <div class="card-body">
+    <!--التعليق العام-->
+      <div class="row">
+          <div class="col-2">
+              <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+              <p class="text-secondary text-center">منذ 40 دقيقه</p>
+          </div>
+          <div class="col-10">
+              <p>
+                  <a class="float-start mt-4 mt-md-4" href=""><strong>عبدالهادي المجالي</strong></a>
+                  <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+                    <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+                  <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+                  <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+                  <span class="float-end"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg></span>
+
+             </p>
+             <div class="clearfix"></div>
+              <p>مرحبا شكرا لكم على هذه الدوره</p>
+              <p>
+                  <a class="float-start btn me-2 mt-4 replay"> <i class="fa-solid fa-reply"></i>الردود</a>
+                  <a class="float-start btn mt-4"> <i class="fa-regular fa-heart"></i> اعجبني</a>
+             </p>
+          </div>
+      </div>
+<!--الردود-->
+        <div class="card card-inner ms-4 mt-2">
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-2">
+                          <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                          <p class="text-secondary text-center">منذ 20 دقيقه</p>
+                      </div>
+                      <div class="col-10">
+                          <p><a href=""><strong>اكادمية حاسوب</strong></a></p>
+                          <p>اهلا عبدالهادي شكرا لك</p>
+                          <p>
+                              <a class="float-start btn text-white btn-danger"><i class="fa-regular fa-heart"></i> اعجبني</a>
+                         </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </div>
+</div>
+
+  </div>
+</div>
+</div>
+  </div>
+<!--الفيديوهات المقترح-->
+  <div class="col-lg-5 order-1 order-lg-2">
+    الاقتراحات
+    <div class="card p-2 mb-4">
+      <div class="row">
+        <!--photo-->
+        <div class="col-sm-5 position-relative">
+         <img src="image/ruby1.jpg" alt="photo" class="w-100 h-100">
+        <time>1:00</time>
+        <i class="fas fa-play fa-2x play"></i>
+    </div>
+    <!--title ....-->
+        <div class="col-lg-7">
+          <div class="card-block">
+            <a href="watch.html" class="text-decoration-none"> <p class="card-title">اكادمية حاسوب</p></a>
+          </div>
+          <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+            1 مليون مشاهده 
+           
+            <a href="chanel.html" class="text-decoration-none d-sm-block ms-3 ms-sm-0">
+              <img src="image/HsoubAcademyLogo.png" alt="alternetText" class="rounded-circle my-2 " width="70px">
+              <span class="card-text">اكادمية حسوب</span>
+              </a>
+          </small>  
+         </div>
+    
+      </div>
+    </div>
+    <div class="card p-2 mb-4">
+      <div class="row">
+        <div class="col-sm-5 position-relative ">
+         <img src="image/frontend.jpg" alt="photo" class="w-100 h-100">
+         <time>1:00</time>
+         <i class="fas fa-play fa-2x play"></i>
+   
+    </div>
+    
+        <div class="col-lg-7">
+          <div class="card-block">
+            <a href="watch.html" class="text-decoration-none"> <p class="card-title">اكادمية حاسوب</p></a>
+          </div>
+          <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+            1 مليون مشاهده 
+           
+            <a href="chanel.html" class="text-decoration-none d-sm-block ms-3 ms-sm-0">
+              <img src="image/HsoubAcademyLogo.png" alt="alternetText" class="rounded-circle my-2 " width="70px">
+              <span class="card-text">اكادمية حسوب</span>
+              </a>
+          </small>  
+         </div>
+    
+      </div>
+    </div>
+    <div class="card p-2 mb-4">
+      <div class="row">
+        <div class="col-sm-5 position-relative ">
+         <img src="image/HsoubAcademyLogo.png" alt="photo" class="w-100 h-100">
+         <time>1:00</time>
+         <i class="fas fa-play fa-2x play"></i>
+   
+    </div>
+    
+        <div class="col-lg-7 mb-4">
+          <div class="card-block">
+            <a href="watch.html" class="text-decoration-none"> <p class="card-title">اكادمية حاسوب</p></a>
+          </div>
+          <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+            1 مليون مشاهده 
+           
+            <a href="chanel.html" class="text-decoration-none d-sm-block ms-3 ms-sm-0">
+              <img src="image/HsoubAcademyLogo.png" alt="alternetText" class="rounded-circle my-2 " width="70px">
+              <span class="card-text">اكادمية حسوب</span>
+              </a>
+          </small>  
+         </div>
+</div>
+</div>
+
+         <div class="card p-2">
+          <div class="row">
+            <div class="col-sm-5 position-relative ">
+             <img src="image/HsoubAcademyLogo.png" alt="photo" class="w-100 h-100">
+             <time>1:00</time>
+             <i class="fas fa-play fa-2x play"></i>
+            </div>
+        
+            <div class="col-lg-7">
+              <div class="card-block">
+                <a href="watch.html" class="text-decoration-none"> <p class="card-title">اكادمية حاسوب</p></a>
+              </div>
+              <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+                1 مليون مشاهده 
+               
+                <a href="chanel.html" class="text-decoration-none d-sm-block ms-3 ms-sm-0">
+                  <img src="image/HsoubAcademyLogo.png" alt="alternetText" class="rounded-circle my-2 " width="70px">
+                  <span class="card-text">اكادمية حسوب</span>
+                  </a>
+              </small>  
+             </div>
+        
+      </div>
+    </div>
+    
+</div>
+</div>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/watch.js"></script> 
+</body>
+</html>

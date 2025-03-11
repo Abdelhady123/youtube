@@ -1,0 +1,47 @@
+.buttonshare{
+    background-color: #bf40bf !important;
+    color:#fff !important;
+}
+.video-section  .card{/*منع ال كرت من التحرك عند التمرير عليه */
+    transform: translateY(0%);
+}
+time{
+    font-size: 13px;
+}
+.rounded-circle{/*تصغير حجم ال  logo 
+    الموجود في اسفل ال كرت
+    */
+    width:80px;
+}
+.card .play{
+    top:25%;
+}
+.card .card-icons .card-img-top{
+    /*
+    التحكم في حجم الصوره
+    */
+    height:150px ;
+}
+.position-relative .social-media{
+    bottom: 18px;
+    left: 20px
+}
+@media(max-width:575px){
+    .navbar-light .navbar-nav .nav-link{
+        font-size: 13px;
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+}
+@media(min-width:576px){
+    .navbar-light .navbar-nav .nav-link{
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+}
+@media(min-width:767px) and (max-width:991px){
+    .block-icon-name{
+           display: block;
+       }
+   }
+   

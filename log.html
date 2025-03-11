@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="er" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سجل يوتيوبي</title>
+  <link rel="stylesheet" href="bootstrap.rtl.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/log.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- jQuery and JS bundle w/ Popper.js -->
+
+  <!--fonawsem-->
+</head>
+
+<body>
+  <div class="layer"></div>
+
+  <div id="top-menu">
+    <div class="container-fluid">
+      <!--
+            navbar(الصنف الرئيسي)
+            navbar-expand-lg( تمدد العناصر على طول القائمه ما دامت الشاشه lg or xlg)
+            navbar-light bg-light(الاصناف المسوله عن لون القائمه)
+            fixed-top(لتثبيت القائمه في اعلى الصفحه) 
+            navbar-brand(يستخدم لكتابة العنوان لل قائمه)  
+            -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-4">
+              <i class="fa-solid fa-bars fa-lg" id="toggler"></i>
+             <b> 
+              <a class="navbar-brand ms-3" href="index.html">يوتيوبي
+              <svg class="icon-video p-1" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </a>
+          </b>
+              <!--الزر المسؤل عن اضهار القائمه في حال كانت الشاشات md s xs-->
+             
+              <!--collapse navbar-collapse(مسؤل عن تنضيم العناصر في القائمه)
+            nav-item active(خاصه بالعناصر داخل القائمه )
+            nav-link(خاصه في الروابط )
+            sr-only(تنسيق المحتوى المخفى المطلوب وجوده من اجل بعض التقنيات مثل قارات الشاشه)
+            -->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-lg-auto">
+                  <li class="nav-item  ps-lg-0">
+                    <a class="nav-link" href="index.html" tabindex="1">الفيديوهات المقترحه </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link ms-lg-3" href="#">المرفوعه حديثا</a>
+                  </li>
+                  <!--القائمه المنسدله
+              tabindex="1"(لتحديد عناصر القائمه عن طريق ال tap
+              اذا كانت القيمه سالبه يعني ان هاذا العنصر معطل
+              ويجب اضافت ال aria-disabled="true"
+              )
+              -->
+      
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">  الفيديوهات الرائجه</a>
+                  </li>
+                  </ul>
+      
+      
+                <!--لاننا نستخدم ملف  css right to lft
+                فعندما نريد ان نضيف مسافه على اليمين نضيفها على اليسار والعكس صحيح
+      
+                btn-danger(اعطاء لون )
+                btn-outline-danger(لون عند التمرير)
+                btn-sm(زر صغير)
+                btn-block(لمتداد الزر على طول الحاويه)
+                  -->
+                <div class="d-flex my-2 my-lg-0">
+                  <input class="form-control me-sm-2 form-hide" type="search" placeholder="Search" aria-label="Search">
+                  <button  onclick="location.href='search.html';" class="btn btn-sm my-2 my-sm-0 form-hide" type="submit">ابحث</button>
+                              
+                </div>
+                    
+              </div>
+              <i class="fas fa-search me-4 search-icon"></i>
+              <a class="nav-link login" href="#" data-bs-toggle="modal" data-bs-target="#loginModel"
+              tabindex="-1"> تسجيل الدخول</a>
+            </nav>
+            <input type="search" class="form-control search-input rtl" placeholder="ابحث هنا">
+      
+          <!-- Modal 
+       -->
+          <div class="modal fade" id="loginModel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">تسجيل الدخول</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="email" class="col-form-label">البريد الكتروني</label>
+                      <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="password" class="col-form-label">كلمة المرور</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <a href="">نسيت كلمة المرور</a>
+                  <a href="" class="mx-auto">انشاء حساب</a>
+                  <button type="button" class="btn btn-outline-primary">دخول</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--side navbar-->
+          <div class="row pt-4">
+            <div class="wrap pt-4">
+              <div class="sidepar">
+                <ul class="list-group list-group-flush ps-0">
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-home me-2 purple"></i>الصفحه الرئيسيه 
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-video me-2 purple"></i> الفيديوهات المقترحه
+                    </a>
+                    
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-plus me-2 purple"></i> المرفوعه حديثا
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-fire me-2 purple"></i>  الفيديوهات الرائجه
+      
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-circle-play me-2 purple"></i>    فيديوهاتي
+                    </a>
+      
+                    <a href="log.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-hourglass me-2 purple"></i>    سجل المشاهده  
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="far fa-share-square me-2 purple"></i> الاشتراكات 
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-film me-2 purple"></i>الافلام والعروض
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-gamepad me-2 purple"></i>العاب الفيديو
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-tshirt me-2 purple"></i>الموضه والجمال 
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fa-solid fa-book me-2 purple"></i> محتوى تعليمي
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-cog me-2 purple"></i> الاعدادات
+                    </a>
+      
+                    <a href="index.html" class="list-group-item list-group-item-action">
+                      <i class="fas fa-question me-2 purple"></i> مساعده
+                    </a>
+      
+                    <a href="https://academy.hsoub.com/">
+                  دورة تطوير واجهات المستخدم<br>
+                  اكادمية حسوب 2024 &copy;
+                    </a>
+                   </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+      
+   <!--hastory search and list-->
+  <div class="hastory-page mt-5">
+    <div class="container">
+      <div class="row">
+        <!--list-->
+        <div class="col-lg-3 mt-3 mb-4 list-background-color">
+<input type="search" placeholder="ابحث في التاريخ" class="form-control my-5 border-0">
+<hr>
+<label class="mb-3">نوع السجل:</label>
+<div class="list-group  list-group-flush pe-0" id="list-tab">
+  <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" >سجل المشاهده</a>
+  <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile">سجل البحث</a>
+  <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages">التعليقات</a>
+  <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings">المنتدى</a>
+</div>  
+<label class="my-3"> التاريخ:</label>
+<div class="list-group  list-group-flush pe-0" id="list-tab">
+  <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home"> منذ 24 ساعه</a>
+  <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile">منذ 3 ايام</a>
+  <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages">منذ اسبوع </a>
+  <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings">منذ شهر</a>
+</div>       
+</div>
+        
+        <!--history searsh-->
+        <div class="col-lg-9 mt-5">
+          <div class="container ">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-horizontal d-md-flex d-block">
+                            <div class="card-icons">
+                               <a href="watch.html"><img class="img" src="image/HsoubAcademyLogo.png" alt="Card image cap" width="300px" height="150px"></a>
+                               <time>12:00</time>
+                               <i class="fas fa-play fa-2x play"></i>
+                               <i class="fas fa-times  play remove"></i>
+                              </div>
+                            <div class="card-body p-2">
+                              <a href="watch.html" class="text-decoration-none"> <h4 class="card-title">اكادمية حاسوب</h4></a>
+                               <p class="card-text"> فيديو تعريفي عن اكادمية حاسوب ومميزاتها والكثير من الدورات الرائعه التي تقودك للاحتراف في عالم البرمجه فيديو تعريفي عن اكادمية حاسوب ومميزاتها والكثير من الدورات الرائعه التي تقودك للاحتراف في عالم البرمجه</p>
+                                <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+                                  1 مليون مشاهده 
+                                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                                  قبل 9 اشهر
+                                  <a href="chanel.html" class="text-decoration-none block-icon-name">
+                                    <img src="image/HsoubAcademyLogo.png" alt="alternetText" class="rounded-circle my-2 ms-2" width="70px">
+                                    <span class="card-text">اكادمية حسوب</span>
+                                    </a>
+                                </small>
+      
+                              </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-12">
+                  <div class="card mb-3">
+                      <div class="card-horizontal d-md-flex d-block">
+                          <div class="card-icons">
+                             <a href="watch.html"><img class="img" src="image/HsoubAcademyLogo.png" alt="Card image cap" width="300px" height="150px"></a>
+                             <time>12:00</time>
+                             <i class="fas fa-play fa-2x play"></i>
+                             <i class="fas fa-times  play remove"></i>
+                            </div>
+                          <div class="card-body p-2">
+                            <a href="watch.html" class="text-decoration-none"> <h4 class="card-title">اكادمية حاسوب</h4></a>
+                             <p class="card-text"> فيديو تعريفي عن اكادمية حاسوب ومميزاتها والكثير من الدورات الرائعه التي تقودك للاحتراف في عالم البرمجه فيديو تعريفي عن اكادمية حاسوب ومميزاتها والكثير من الدورات الرائعه التي تقودك للاحتراف في عالم البرمجه</p>
+                              <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+                                1 مليون مشاهده 
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                                قبل 9 اشهر
+                                <a href="chanel.html" class="text-decoration-none block-icon-name">
+                                  <img src="image/HsoubAcademyLogo.png" alt="alternetText" class="rounded-circle my-2 ms-2" width="70px">
+                                  <span class="card-text">اكادمية حسوب</span>
+                                  </a>
+                              </small>
+      
+                            </div>
+                      </div>
+                     
+                  </div>
+              </div>
+              <div class="col-12">
+                <div class="card mb-3">
+                    <div class="card-horizontal d-md-flex d-block">
+                        <div class="card-icons">
+                           <a href="watch.html"><img class="img" src="image/72img.png" alt="Card image cap" width="300px" height="150px">
+                          </a>
+                          <i class="fas fa-play fa-2x play"></i>
+                           <time>12:00</time>
+                           <i class="fas fa-times  play remove"></i>
+                          </div>
+                        <div class="card-body p-2">
+                          <a href="watch.html" class="text-decoration-none"> <h4 class="card-title">خمسات </h4></a>
+                           <p class="card-text">ما هو خمسات؟ خمسات هو أكبر سوق عربي لبيع وشراء الخدمات المصغرة. يجمع خمسات بين الشباب العربي الموهوب المستعد لتقديم خبراته ومهاراته على شكل خدمات مصغرة بأسعار  </p>
+                            <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+                             1.5 مليون مشاهده 
+                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                              قبل3 اشهر
+                              <a href="chanel.html" class="text-decoration-none block-icon-name">
+                                <img src="image/72img.png" alt="alternetText" class="rounded-circle my-2 ms-2" width="70px">
+                                <span class="card-text">خمسات</span>
+                              </a>
+                            </small>
+      
+                          </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-12">
+              <div class="card mb-3">
+                  <div class="card-horizontal d-md-flex d-block">
+                      <div class="card-icons">
+                         <a href="watch.html"><img class="img" src="image/72img.png" alt="Card image cap" width="300px" height="150px"></a>
+                         <time>12:00</time>
+                         <i class="fas fa-play fa-2x play"></i>
+                         <i class="fas fa-times  play remove"></i>
+                        </div>
+                      <div class="card-body p-2">
+                        <a href="watch.html" class="text-decoration-none"> <h4 class="card-title">خمسات </h4></a>
+                         <p class="card-text">ما هو خمسات؟ خمسات هو أكبر سوق عربي لبيع وشراء الخدمات المصغرة. يجمع خمسات بين الشباب العربي الموهوب المستعد لتقديم خبراته ومهاراته على شكل خدمات مصغرة بأسعار  </p>
+                          <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+                           1.5 مليون مشاهده 
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                            قبل3 اشهر
+                            <a href="chanel.html" class="text-decoration-none block-icon-name">
+                              <img src="image/72img.png" alt="alternetText" class="rounded-circle my-2 ms-2" width="70px">
+                              <span class="card-text">خمسات</span>
+                              </a>
+                          </small>
+      
+                        </div>
+                  </div>
+                 
+              </div>
+          </div>
+          <div class="col-12">
+            <div class="card mb-3">
+                <div class="card-horizontal d-md-flex d-block">
+                    <div class="card-icons">
+                       <a href="watch.html"><img class="img" src="image/mostaql2.png" alt="Card image cap" width="300px" height="150px"></a>
+                       <time>12:00</time>
+                       <i class="fas fa-play fa-2x play"></i>
+                       <i class="fas fa-times  play remove"></i>
+                      </div>
+                    <div class="card-body p-2">
+                      <a href="watch.html" class="text-decoration-none"> <h4 class="card-title">مستقل </h4></a>
+                       <p class="card-text">أنجز مشاريعك عبر الإنترنت بسهولة وأمان بالاعتماد على توظيف مستقلين محترفين في البرمجة، تطوير المواقع والتطبيقات، التصميم، التسويق، الترجمة وغيرها من ...  </p>
+                        <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+                         300 الف
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                          قبل1 اشهر
+                          <a href="chanel.html" class="text-decoration-none block-icon-name">
+                            <img src="image/images.png" alt="alternetText" class="rounded-circle my-2 ms-2" width="50px">
+                            <span class="card-text">مستقل</span>
+                            </a>
+                        </small>
+      
+                      </div>
+                </div>
+               
+            </div>
+        </div>
+        <div class="col-12 ">
+          <div class="card mb-3">
+              <div class="card-horizontal d-md-flex d-block">
+                  <div class="card-icons">
+                     <a href="watch.html"><img class="img" src="image/mostaql2.png" alt="Card image cap" width="300px" height="150px"></a>
+                     <time>12:00</time>
+                     <i class="fas fa-play fa-2x play"></i>
+                     <i class="fas fa-times  play remove"></i>
+                    </div>
+                  <div class="card-body p-2">
+                    <a href="watch.html" class="text-decoration-none"> <h4 class="card-title">مستقل </h4></a>
+                     <p class="card-text">أنجز مشاريعك عبر الإنترنت بسهولة وأمان بالاعتماد على توظيف مستقلين محترفين في البرمجة، تطوير المواقع والتطبيقات، التصميم، التسويق، الترجمة وغيرها من ...  </p>
+                      <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M160-120v-720h80v80h80v-80h320v80h80v-80h80v720h-80v-80h-80v80H320v-80h-80v80h-80Zm80-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm400 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80ZM400-200h160v-560H400v560Zm0-560h160-160Z"/></svg>
+                       300 الف
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                        قبل1 اشهر
+                        <a href="chanel.html" class="text-decoration-none block-icon-name">
+                          <img src="image/images.png" alt="alternetText" class="rounded-circle my-2 ms-2" width="50px">
+                          <span class="card-text">مستقل</span>
+                          </a>
+                      </small>
+      
+                    </div>
+              </div>
+             
+          </div>
+      </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="js/bootstrap.js"></script>
+  <script src="js/popper.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/log.js"></script>
+</body>
+
+</html>

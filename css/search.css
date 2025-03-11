@@ -1,0 +1,43 @@
+.icon-search{
+    cursor: pointer;
+}
+.search-header .filter-column{
+    display:none;
+}
+input:checked+span{
+    color: #bf40bf;
+}
+time{
+    bottom: 7px;
+    left: 20px;
+}
+.img{
+    height: 100%;
+}
+.card .card-horizontal .card-body p{
+    white-space: nowrap;/* تضع النص في سطر واحد */
+    overflow: hidden;/* بإخفاء النص الذي يتجاوز حدود العنص */
+    text-overflow: ellipsis;/* ... */
+}
+.card-body{
+    min-width: 0;
+}
+@media(max-width:767px){
+    .img{
+width: 100%;
+    }
+    .card .card-horizontal time{
+        left:10px;
+    }
+    .card .card-horizontal .fa-play{
+        right: 45%;
+    }
+}
+/*للتحكم في اسم القناه مع logo
+حسب حجم الشاشه
+*/
+@media(min-width:768px) and (max-width:991px){
+ .block-icon-name{
+        display: block;
+    }
+}

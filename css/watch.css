@@ -1,0 +1,71 @@
+.card:hover{
+    transform:translateY(0%);
+}
+.watchpage .icons{/*وضع ال icons في الاسفل */
+    position: absolute;
+    bottom: 5px;
+}
+.watchpage .icons:hover{
+    cursor: pointer;
+}
+.watchpage #more{/* اخفاء النص */
+    display: none;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+/*للتحكم في ال الردود */
+.card-inner{
+    display:none;
+}
+/* اعطاء ازرار الردود و الاعجبني تنسيق */
+.bublic-coment .card .btn{
+    background-color: #921192;
+    border-color:#921192 ;
+    color:#fff;
+}
+.bublic-coment .card .btn:hover{
+    background-color: #b12cb1;
+}
+/* ايقونة ال play*/
+.watchpage .fa-play{
+top:40% !important;
+right:46%;
+}
+time{
+    left:24px !important;
+}
+div.dropdown-menu 
+{
+    inset: 0px 230px auto auto !important;
+}
+
+@media(min-width:992px) and (max-width:1055px){
+    #block-img-name{
+        display:block;
+    }
+}
+@media (max-width:991px){
+    #myBtn{
+        margin-bottom:45px !important;
+    }
+}
+@media(min-width:992px){
+    time{
+        font-size: 13px;
+    }
+    .fa-play{
+font-size: 25px !important;
+    }
+}
+/*تقليل حجم الخط وقت النشر في التعليق والردود */
+@media(max-width:598px){
+    .text-secondary{
+        font-size: 10px;
+    }
+}
+@media(max-width:991px){
+   .commuents .coments-details #dropdownMenuButton{
+        margin-top: 10px;
+    }
+}
